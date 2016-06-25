@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>{{title}}</title>
+</head>
+<body>
+	<h1>Template is {{title}}</h1>
+	{% for obj in object_list %}
+	{{obj.title}}</br>
+	{{obj.content}}</br>
+	{{obj.timestamp}}</br>
+	{{obj.updated}}</br>
+	{{obj.pk}}</br>
+	{% endfor %}
+</body>
+</html>
