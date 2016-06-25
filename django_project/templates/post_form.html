@@ -1,12 +1,11 @@
-<html>
-<body>
+{% extends "base.html" %}
 	
-<h1> Form </h1>
+{% block content %}	
+{{block.super}}
+	<h1> Form </h1>
 
-<form method = 'POST' action=''>{% csrf_token %}
-{{ form.as_p }}
-<input type = 'submit' value="Create Post"> 
-</form>
-
-</body>
-</html>
+	<form method = 'POST' action=''>{% csrf_token %}
+	{{ form.as_p }}
+	<input type = 'submit' value="Create Post"/> 
+	</form>
+{% endblock content %}
