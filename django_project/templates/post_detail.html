@@ -3,19 +3,10 @@
 	{{inst.title}}|{{block.super}}
 {% endblock head_title %}
 
-<style>
-	{% block style %}
-	h1{
-		color: #777777;
-	}
-	{% endblock style %}
-</style>
-{% block content %}	
-	<h1>{{title}}</h1>
-	{{inst.title}}</br>
-	{{inst.content}}</br>
-	{{inst.timestamp}}</br>
-	{{inst.updated}}</br>
-	{{inst.pk}}</br>
+{% block content %}
+<div class='col-sm-6 col-sm-offset-3'>	
+	<h2>{{inst.title}} {{inst.timestamp}}</h2></br>
+	{{inst.content | linebreaks}}
+</div>
 
 {% endblock content %}
