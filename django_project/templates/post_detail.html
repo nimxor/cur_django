@@ -5,7 +5,10 @@
 
 {% block content %}
 <div class='col-sm-6 col-sm-offset-3'>	
-	<h2>{{inst.title}} {{inst.timestamp}}</h2></br>
+	{% if inst.image %}
+	<img src='{{ inst.image.url }}' class="img-responsive" />
+	{% endif %}
+	<h2>{{inst.title}}<small> {{inst.timestamp}}</small></h2></br>
 	{{inst.content | linebreaks}}
 </div>
 
