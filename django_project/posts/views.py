@@ -5,6 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from .models import Post
 from .forms import PostForm
+from urllib import quote_plus
 
 # Create your functional views here.
 
@@ -30,10 +31,12 @@ def post_create(request):
 
 def post_detail(request,id=None):
 	instance = get_object_or_404(Post,id=id) # just a type of a query set 
+	share_string = quote_plus(instance.content)
 	# instance = Post.object.get(id=3)
 	context = {
 	"title" : instance.title , 
-	"inst" : instance
+	"inst" : instance,
+	"share_string":share_string
 	}
 	return render(request,"post_detail.html",context)
 
